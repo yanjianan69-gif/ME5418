@@ -1,0 +1,134 @@
+{
+  "seed": 42,
+  "num_envs": 8192,
+  "sim_device": "cuda:0",
+  "device": "cuda:0",
+  "iterations": 100,
+  "task": {
+    "physics_dt": 0.005,
+    "decimation": 4,
+    "episode_seconds": 120.0,
+    "action_scale": 0.25,
+    "action_limit": 10.0,
+    "hip_scale": 0.5,
+    "leg_kp": 35.0,
+    "leg_kd": 1.0,
+    "observation_limit": 100.0,
+    "target_height": 0.3,
+    "reset_height": 0.34,
+    "reset_height_noise": 0.02,
+    "reset_tilt": 0.05,
+    "reset_joint_noise": 0.05,
+    "reset_velocity_noise": 0.05,
+    "arm_initial_noise": 0.0,
+    "terminal_height": 0.17,
+    "terminal_tilt": 1.2,
+    "command_ranges": [
+      [
+        0.0,
+        0.35
+      ],
+      [
+        -0.1,
+        0.1
+      ],
+      [
+        -0.55,
+        0.55
+      ]
+    ],
+    "command_target_ranges": [
+      [
+        0.12,
+        0.35
+      ],
+      [
+        -0.1,
+        0.1
+      ],
+      [
+        -0.55,
+        0.55
+      ]
+    ],
+    "command_transition_seconds": [
+      5.0,
+      9.0
+    ],
+    "pose_command_ranges": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "command_seconds": 10.0,
+    "stand_probability": 0.1,
+    "gait_frequency": 3.0,
+    "swing_height": 0.04,
+    "stance_width": 0.3,
+    "stance_length": 0.45,
+    "disturbance_intensity": 1.0,
+    "arm_accel_seconds": 0.01,
+    "arm_max_accel": 10.0,
+    "arm_max_velocity": 5.0,
+    "arm_random_position_limit": 0.08,
+    "arm_position_limit": 3.2,
+    "arm_startup_seconds": 2.0,
+    "arm_target_max_velocity": 2.4,
+    "arm_gripper_max_drop": 0.1,
+    "arm_gripper_height_margin": 0.02,
+    "arm_planning_height": 0.08,
+    "arm_body_clearance": 0.03,
+    "arm_path_resolution": 0.025,
+    "arm_sample_attempts": 48,
+    "arm_retry_seconds": 0.5,
+    "arm_zero_accel_probability": 0.3,
+    "arm_zero_velocity_probability": 0.005,
+    "randomize_dynamics": true,
+    "arm_mass_scale": [
+      0.8,
+      1.2
+    ],
+    "arm_com_noise": 0.01,
+    "friction_range": [
+      0.5,
+      1.25
+    ],
+    "motor_strength_range": [
+      0.9,
+      1.1
+    ],
+    "motor_offset_noise": 0.02
+  },
+  "network": {
+    "actor_hidden_dims": [
+      512,
+      256,
+      128
+    ],
+    "critic_hidden_dims": [
+      512,
+      256,
+      128
+    ],
+    "init_noise_std": 1.0
+  },
+  "ppo": {
+    "num_steps_per_env": 24,
+    "num_learning_epochs": 5,
+    "num_mini_batches": 8,
+    "learning_rate": 0.0005,
+    "gamma": 0.99,
+    "lam": 0.95,
+    "clip_param": 0.2,
+    "value_loss_coef": 1.0,
+    "entropy_coef": 0.01,
+    "max_grad_norm": 1.0,
+    "desired_kl": 0.01,
+    "use_clipped_value_loss": true
+  }
+}

@@ -1,0 +1,8 @@
+# Supplemental packages; create the complete environment from environment.yml
+# or environment-rtx40.yml. Both pin the PyTorch build used by stage1_rl.
+# Isaac Gym Preview 4 is installed separately as described in README.md.
+gym==0.26.2
+numpy==1.23.5
+ninja==1.13.2
+imageio==2.35.1
+imageio-ffmpeg==0.5.1
